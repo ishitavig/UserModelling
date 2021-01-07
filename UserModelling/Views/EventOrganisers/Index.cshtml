@@ -1,0 +1,46 @@
+﻿@model IEnumerable<UserModelling.Models.EventOrganisers>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New Event Organiser", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Events.EventName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Organisers.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssigningDateTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Events.EventName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Organisers.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssigningDateTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EventOrganiserId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EventOrganiserId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EventOrganiserId })
+        </td>
+    </tr>
+}
+
+</table>

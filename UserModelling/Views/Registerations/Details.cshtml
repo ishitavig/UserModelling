@@ -1,0 +1,43 @@
+﻿@model UserModelling.Models.Registerations
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Registerations</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Attendees.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Attendees.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Events.EventName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Events.EventName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegisterationDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegisterationDateTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RegisterationId }) |
+    @Html.ActionLink("Back to Registerations List", "Index")
+</p>
